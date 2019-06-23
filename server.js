@@ -6,13 +6,13 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 4000;
-const {mongoURI} = require('./config/keys');
+const {mongoURI, uiURL} = require('./config/keys');
 const router = require('./router');
 
 app.use(cookieParser());
 app.use(cors({
     credentials: true,
-    origin: ['https://bdm-watchlist-ui.herokuapp.com', 'https://bdm-watchlist-ui.herokuapp.com/', 'http://localhost:3000', 'http://localhost:3000/'],
+    origin: [`https://${uiURL}`, `https://${uiURL}/`, 'http://localhost:3000', 'http://localhost:3000/'],
 }));
 app.use(bodyParser.json());
 app.use('/movies/', router);

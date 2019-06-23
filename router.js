@@ -1,8 +1,5 @@
 const router = require('express').Router();
 const axios = require('axios');
-const uuid = require('uuid/v4');
-
-const {tmdbKey} = require('./config/keys');
 const Movie = require('./models/movie.model');
 
 // GET ALL MOVIES
